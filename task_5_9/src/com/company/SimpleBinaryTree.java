@@ -1,5 +1,9 @@
 package com.company;
 
+import java.sql.ClientInfoStatus;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import java.util.function.Function;
 
 /**
@@ -150,4 +154,24 @@ public class SimpleBinaryTree<T> implements BinaryTree<T> {
         }
         this.root = root;
     }
+
+    public List<Integer> getWanted() {
+        List<Integer> list = new ArrayList();
+        BinaryTreeAlgorithms.Visitor visitor = new BinaryTreeAlgorithms.Visitor() {
+            int leveld = -1;
+            @Override
+            public void visit(Object value, int level) {
+                if (leveld != level) {
+                    list.add(level, 0);
+                    leveld++;
+                }
+                int c = list.get(level);
+                list.add(level, c+1);
+            }
+        };
+        BinaryTreeAlgorithms.byLevelVisit(this.getRoot(), visitor);
+        return list;
+    }
+
+
 }

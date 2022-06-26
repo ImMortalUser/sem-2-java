@@ -1,9 +1,6 @@
 package com.company;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class BinaryTreeAlgorithms {
 
@@ -24,7 +21,7 @@ public class BinaryTreeAlgorithms {
      * "посетителем" в прямом/NLR порядке - рекурсивная реализация
      *
      * @param treeNode Узел поддерева, которое требуется "обойти"
-     * @param visitor Посетитель
+     * @param visitor  Посетитель
      */
     public static <T> void preOrderVisit(BinaryTree.TreeNode<T> treeNode, Visitor<T> visitor) {
         // данный класс нужен только для того, чтобы "спрятать" его метод (c 3-мя параметрами)
@@ -82,7 +79,7 @@ public class BinaryTreeAlgorithms {
      * "посетителем" в симметричном/поперечном/центрированном/LNR порядке - рекурсивная реализация
      *
      * @param treeNode Узел поддерева, которое требуется "обойти"
-     * @param visitor Посетитель
+     * @param visitor  Посетитель
      */
     public static <T> void inOrderVisit(BinaryTree.TreeNode<T> treeNode, Visitor<T> visitor) {
         // данный класс нужен только для того, чтобы "спрятать" его метод (c 3-мя параметрами)
@@ -145,7 +142,7 @@ public class BinaryTreeAlgorithms {
      * "посетителем" в обратном/LRN порядке - рекурсивная реализация
      *
      * @param treeNode Узел поддерева, которое требуется "обойти"
-     * @param visitor Посетитель
+     * @param visitor  Посетитель
      */
     public static <T> void postOrderVisit(BinaryTree.TreeNode<T> treeNode, Visitor<T> visitor) {
         // данный класс нужен только для того, чтобы "спрятать" его метод (c 3-мя параметрами)
@@ -208,8 +205,8 @@ public class BinaryTreeAlgorithms {
 
 
     /**
-     *  Класс для хранения узла дерева вместе с его уровнем, нужен для методов
-     *  {@link #byLevelVisit(BinaryTree.TreeNode, Visitor)} и {@link #byLevelValues(BinaryTree.TreeNode)}
+     * Класс для хранения узла дерева вместе с его уровнем, нужен для методов
+     * {@link #byLevelVisit(BinaryTree.TreeNode, Visitor)} и {@link #byLevelValues(BinaryTree.TreeNode)}
      *
      * @param <T>
      */
@@ -227,7 +224,7 @@ public class BinaryTreeAlgorithms {
      * Обход поддерева с вершиной в данном узле "посетителем" по уровням (обход в ширину)
      *
      * @param treeNode Узел поддерева, которое требуется "обойти"
-     * @param visitor Посетитель
+     * @param visitor  Посетитель
      */
     public static <T> void byLevelVisit(BinaryTree.TreeNode<T> treeNode, Visitor<T> visitor) {
         Queue<QueueItem<T>> queue = new LinkedList<>();
@@ -313,4 +310,6 @@ public class BinaryTreeAlgorithms {
 
         return sb.toString();
     }
+
+
 }
